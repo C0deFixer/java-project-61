@@ -1,17 +1,24 @@
 package hexlet.code;
-import  java.util.Scanner;
+
+import java.util.Scanner;
+
 public class Cli {
-    public static String enterYouName() {
+    // preamble - print Question before enter
+    // printChoice  - print "Your choice" after enter choice
+    public static String getUserAnswer(String question, String printChoice, String postFix) {
+        String userChoice = "";
+        System.out.println(question);
         Scanner scanner = new Scanner(System.in);
-        System.out.print("May I have your name? ");
-        String userName = "";
         if (scanner.hasNextLine()) {
-            userName = scanner.next();
-            System.out.println("Hello, " + userName + "!");
+            userChoice = scanner.nextLine();
+            userChoice = !userChoice.isBlank() ? userChoice : "Anonim";
+            if (!printChoice.isBlank()) {
+                System.out.printf("%s%s%s\n", printChoice, userChoice, postFix);
+            }
         } else {
-            System.out.println("Sorry, You name is not a string!");
+            System.out.println("Sorry, Type of Your choice is unacceptable!");
         }
-        scanner.close();
-        return userName;
+        //scanner.close();
+        return userChoice;
     }
 }
