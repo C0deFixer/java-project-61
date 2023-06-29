@@ -5,17 +5,14 @@ import java.util.Scanner;
 public class Even implements BrainGamePlay {
     //private static Scanner scanner;
 
-    private static String getUserAnswer(Scanner scanner, String question, String printChoice, String postFix) {
+    private static String getUserAnswer(Scanner scanner, String question, String printChoice) {
         String userChoice = "";
 
         //Scanner scanner = new Scanner(System.in);
         System.out.println(question);
-
+        System.out.print(printChoice);
         if (scanner.hasNextLine()) {
             userChoice = scanner.nextLine();
-            if (!userChoice.isBlank()) {
-                System.out.println(printChoice + userChoice + postFix);
-            }
         } else {
             System.out.println("Sorry, Type of Your choice is unacceptable!");
         }
@@ -35,7 +32,7 @@ public class Even implements BrainGamePlay {
         for (int attempt = 1; attempt <= 3; attempt++) {
             number = (int) (Math.random() * 1000);
             rightAnswer = number % 2 == 0 ? "yes" : "no";
-            String userAnswer = getUserAnswer(scanner, "Question: " + number, "Your answer: ", "");
+            String userAnswer = getUserAnswer(scanner, "Question: " + number, "Your answer: ");
             if (userAnswer.equals(rightAnswer)) {
                 System.out.println("Correct!");
             } else {

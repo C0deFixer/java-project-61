@@ -7,12 +7,13 @@ public class Cli {
     // printChoice  - print "Your choice" after enter choice
     public static String getUserAnswer(String question, String printChoice, String postFix) {
         String userChoice = "";
-        System.out.println(question);
+        System.out.print(question);
         Scanner scanner = new Scanner(System.in);
         if (scanner.hasNextLine()) {
             userChoice = scanner.nextLine();
             userChoice = !userChoice.isBlank() ? userChoice : "Anonim";
             if (!printChoice.isBlank()) {
+                //System.out.printf("%s%s%s\n", printChoice, userChoice, postFix);
                 System.out.printf("%s%s%s\n", printChoice, userChoice, postFix);
             }
         } else {

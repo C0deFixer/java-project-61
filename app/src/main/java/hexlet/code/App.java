@@ -7,7 +7,7 @@ public class App {
 
         System.out.println("Please enter the game number and press Enter.");
         // Menu Choice
-        String userChoice = (String) Cli.getUserAnswer("1 - Greet\n2 - Even\n0 - Exit", "Your choice: ", "");
+        String userChoice = (String) Cli.getUserAnswer("1 - Greet\n2 - Even\n0 - Exit\nYour choice: ", "", "");
         switch (userChoice) {
             case "":
             case "0":
@@ -18,7 +18,7 @@ public class App {
             case "4":
             case "5":
             case "6":
-                userName = (String) Cli.getUserAnswer("May I have your name?", "Hello, ", "!");
+                userName = (String) Cli.getUserAnswer("May I have your name? ", "Hello, ", "!");
             default:
         }
         switch (userChoice) {
