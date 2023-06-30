@@ -3,8 +3,8 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Calc {
-    public static boolean playgame(String userName) {
-        int quantityOfQuestions = 20;
+    public static boolean playGame(String userName) {
+        int quantityOfQuestions = 3;
         int quantityOfOperations = 3;
         boolean result = true;
         int operand1;

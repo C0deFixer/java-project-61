@@ -3,7 +3,7 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Even {
-    public static boolean playgame(String userName) {
+    public static boolean playGame(String userName) {
         int quantityOfQuestions = 3;
         boolean result = true;
         int range = 1000; // range int from 0 to 1000
