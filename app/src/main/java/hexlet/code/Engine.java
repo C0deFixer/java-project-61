@@ -3,7 +3,7 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    private static boolean checkUserAnswer(Scanner scanner,
+    public static boolean checkUserAnswer(Scanner scanner,
                                            String questionString,
                                            String printChoice,
                                            String rightAnswer) {
