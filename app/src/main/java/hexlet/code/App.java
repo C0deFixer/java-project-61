@@ -4,6 +4,7 @@ import hexlet.code.games.Even;
 import hexlet.code.games.Calc;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
 
 public class App {
     public static void main(String[] args) {
@@ -12,7 +13,16 @@ public class App {
 
         System.out.println("Please enter the game number and press Enter.");
         // Menu Choice
-        String userChoice = Cli.getUserAnswer("1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n5 - Progression\n0 - Exit\nYour choice: ", "", "");
+        String userChoice = Cli.getUserAnswer("1 - Greet\n"
+                        + "2 - Even\n"
+                        + "3 - Calc\n"
+                        + "4 - GCD\n"
+                        + "5 - Progression\n"
+                        + "6 - Prime\n"
+                        + "0 - Exit\n"
+                        + "Your choice: ",
+                "",
+                "");
         switch (userChoice) {
             case "":
             case "0":
@@ -39,6 +49,9 @@ public class App {
                 break;
             case "5":
                 playResult = Progression.playGame(userName);
+                break;
+            case "6":
+                playResult = Prime.playGame(userName);
                 break;
             default:
                 //System.out.println("Exit");

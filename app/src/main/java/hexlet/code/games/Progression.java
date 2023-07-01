@@ -25,7 +25,7 @@ public class Progression {
             indexHidingMember = (int) (Math.random() * (quantityOfMembers - 2)) + 1; //not first and not last
             StringJoiner question = new StringJoiner(" ");
 
-            for (int j= 0; j < quantityOfMembers; j++) {
+            for (int j = 0; j < quantityOfMembers; j++) {
 
                 if (j == indexHidingMember) {
                     question.add("..");
