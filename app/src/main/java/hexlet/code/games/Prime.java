@@ -16,16 +16,16 @@ public class Prime {
     }
 
     public static boolean playGame(String userName) {
-        int quantityOfQuestions = 3;
+        int questionsCount = 3;
         boolean result = true;
         int range = 100; // range int from 0 to 100
         int number;
 
-        String[] questions = new String[quantityOfQuestions];
-        String[] rightAnswers = new String[quantityOfQuestions];
+        String[] questions = new String[questionsCount];
+        String[] rightAnswers = new String[questionsCount];
 
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'");
-        for (int i = 0; i < quantityOfQuestions; i++) {
+        for (int i = 0; i < questionsCount; i++) {
             number = (int) (Math.random() * range);
             questions[i] = Integer.toString(number);
             rightAnswers[i] = isPrime(number) ? "yes" : "no";

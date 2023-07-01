@@ -7,31 +7,31 @@ import java.util.StringJoiner;
 public class Progression {
 
     public static boolean playGame(String userName) {
-        int quantityOfQuestions = 3;
+        int questionsCount = 3;
         boolean result = true;
-        int firstMember;
-        int firstMemberRange = 10;
-        int indexHidingMember;
+        int firstNumber;
+        int firstNumberRange = 10;
+        int indexHidingNumber;
         int stepProgression;
-        int quantityOfMembers = 8;
+        int numbersCount = 8;
 
-        String[] questions = new String[quantityOfQuestions];
-        String[] rightAnswers = new String[quantityOfQuestions];
+        String[] questions = new String[questionsCount];
+        String[] rightAnswers = new String[questionsCount];
 
         System.out.println("What number is missing in the progression?");
-        for (int i = 0; i < quantityOfQuestions; i++) {
-            firstMember = (int) (Math.random() * firstMemberRange);
+        for (int i = 0; i < questionsCount; i++) {
+            firstNumber = (int) (Math.random() * firstNumberRange);
             stepProgression = (int) (Math.random() * 10);
-            indexHidingMember = (int) (Math.random() * (quantityOfMembers - 2)) + 1; //not first and not last
+            indexHidingNumber = (questionsCount - 2) + 1; //not first and not last
             StringJoiner question = new StringJoiner(" ");
 
-            for (int j = 0; j < quantityOfMembers; j++) {
+            for (int j = 0; j < numbersCount; j++) {
 
-                if (j == indexHidingMember) {
+                if (j == indexHidingNumber) {
                     question.add("..");
-                    rightAnswers[i] = Integer.toString(firstMember + stepProgression * j);
+                    rightAnswers[i] = Integer.toString(firstNumber + stepProgression * j);
                 } else {
-                    question.add(Integer.toString(firstMember + stepProgression * j));
+                    question.add(Integer.toString(firstNumber + stepProgression * j));
                 }
             }
             questions[i] = question.toString();

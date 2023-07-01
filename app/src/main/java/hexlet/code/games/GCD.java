@@ -12,16 +12,16 @@ public class GCD {
     }
 
     public static boolean playGame(String userName) {
-        int quantityOfQuestions = 3;
+        int questionsCount = 3;
         boolean result = true;
         int operand1;
         int operand2;
 
-        String[] questions = new String[quantityOfQuestions];
-        String[] rightAnswers = new String[quantityOfQuestions];
+        String[] questions = new String[questionsCount];
+        String[] rightAnswers = new String[questionsCount];
 
         System.out.println("Find the greatest common divisor of given numbers.");
-        for (int i = 0; i < quantityOfQuestions; i++) {
+        for (int i = 0; i < questionsCount; i++) {
             operand1 = (int) (Math.random() * 100);
             operand2 = (int) (Math.random() * 100);
 
