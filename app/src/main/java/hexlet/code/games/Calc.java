@@ -1,23 +1,24 @@
 package hexlet.code.games;
 
+import hexlet.code.App;
 import hexlet.code.Engine;
 
 public class Calc {
+    final static int OPERATIONS_COUNT = 3;
+    static final int RANGE = 100;
     public static boolean playGame(String userName) {
-        int quantityOfQuestions = 3;
-        int quantityOfOperations = 3;
         boolean result = true;
         int operand1;
         int operand2;
         int operationRandomInt; // 0 - Sum, 1 - Subtraction, 2 - Multiply
 
-        String[] questions = new String[quantityOfQuestions];
-        String[] rightAnswers = new String[quantityOfQuestions];
+        String[] questions = new String[App.QUESTIONS_COUNT];
+        String[] rightAnswers = new String[App.QUESTIONS_COUNT];
 
         System.out.println("What is the result of the expression?");
-        for (int i = 0; i < quantityOfQuestions; i++) {
+        for (int i = 0; i < App.QUESTIONS_COUNT; i++) {
             //Suppose Accurate probability from 0 to quantityOfOperations
-            operationRandomInt = (int) (Math.random() * quantityOfOperations);
+            operationRandomInt = (int) (Math.random() * OPERATIONS_COUNT);
             //System.out.println("operationRandomInt :" + operationRandomInt);
             operand1 = (int) (Math.random() * 100);
             operand2 = (int) (Math.random() * 100);

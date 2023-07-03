@@ -1,31 +1,31 @@
 package hexlet.code.games;
 
+import hexlet.code.App;
 import hexlet.code.Engine;
 
 import java.util.StringJoiner;
 
 public class Progression {
-
+    static final int RANGE_PROGRESSION = 10; //Step progression range
+    static final int FIST_NNUMBER_RANGE = 10; //Step progression range
+    static final int NUMBERS_COUNT = 8; //Quantity of numbers in progression
     public static boolean playGame(String userName) {
-        int questionsCount = 3;
         boolean result = true;
         int firstNumber;
-        int firstNumberRange = 10;
         int indexHidingNumber;
         int stepProgression;
-        int numbersCount = 8;
 
-        String[] questions = new String[questionsCount];
-        String[] rightAnswers = new String[questionsCount];
+        String[] questions = new String[App.QUESTIONS_COUNT];
+        String[] rightAnswers = new String[App.QUESTIONS_COUNT];
 
         System.out.println("What number is missing in the progression?");
-        for (int i = 0; i < questionsCount; i++) {
-            firstNumber = (int) (Math.random() * firstNumberRange);
-            stepProgression = (int) (Math.random() * 10);
-            indexHidingNumber = (questionsCount - 2) + 1; //not first and not last
+        for (int i = 0; i < App.QUESTIONS_COUNT; i++) {
+            firstNumber = (int) (Math.random() * FIST_NNUMBER_RANGE);
+            stepProgression = (int) (Math.random() * RANGE_PROGRESSION);
+            indexHidingNumber = (int) (Math.random() * NUMBERS_COUNT); //not first and not last
             StringJoiner question = new StringJoiner(" ");
 
-            for (int j = 0; j < numbersCount; j++) {
+            for (int j = 0; j < NUMBERS_COUNT; j++) {
 
                 if (j == indexHidingNumber) {
                     question.add("..");

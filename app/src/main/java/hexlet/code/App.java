@@ -7,9 +7,11 @@ import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
 
 public class App {
+    public static final int QUESTIONS_COUNT = 3;
+
     public static void main(String[] args) {
         String userName = "";
-        int questionsCount =3;
+
         boolean playResult;
 
         System.out.println("Please enter the game number and press Enter.");
@@ -51,7 +53,7 @@ public class App {
                 playResult = Calc.playGame(userName);
                 break;
             case "4":
-                playResult = GCD.playGame(userName, questionsCount, 100);
+                playResult = GCD.playGame(userName);
                 break;
             case "5":
                 playResult = Progression.playGame(userName);
