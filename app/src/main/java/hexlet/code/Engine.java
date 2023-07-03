@@ -35,7 +35,7 @@ public class Engine {
             result = checkUserAnswer(scanner, "Question: " + questions[i], "Your answer: ", rightAnswers[i]);
         }
         if (result) {
-            System.out.println("Congratulations, " + userName);
+            System.out.println("Congratulations, " + userName + "!");
         } else {
             System.out.println("Let's try again, " + userName);
         }
