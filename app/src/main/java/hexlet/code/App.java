@@ -50,7 +50,7 @@ public class App {
                 playResult = Calc.playGame(userName);
                 break;
             case "4":
-                playResult = GCD.playGame(userName);
+                playResult = GCD.playGame(userName, 3, 100);
                 break;
             case "5":
                 playResult = Progression.playGame(userName);

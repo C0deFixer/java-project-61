@@ -11,8 +11,7 @@ public class GCD {
         }
     }
 
-    public static boolean playGame(String userName) {
-        int questionsCount = 3;
+    public static boolean playGame(String userName, int questionsCount, int range) {
         boolean result = true;
         int operand1;
         int operand2;
@@ -22,8 +21,8 @@ public class GCD {
 
         System.out.println("Find the greatest common divisor of given numbers.");
         for (int i = 0; i < questionsCount; i++) {
-            operand1 = (int) (Math.random() * 100);
-            operand2 = (int) (Math.random() * 100);
+            operand1 = (int) (Math.random() * range);
+            operand2 = (int) (Math.random() * range);
 
             questions[i] = operand1 + " " + operand2;
             rightAnswers[i] = Integer.toString(getGCD(operand1, operand2));
