@@ -33,6 +33,7 @@ public class App {
             case "4":
             case "5":
             case "6":
+                System.out.println("Welcome to the Brain Games!");
                 userName = Cli.getUserAnswer("May I have your name? ", "Hello, ", "!");
                 if (userChoice.equals("1")) {
                     return;
@@ -41,7 +42,6 @@ public class App {
             default:
                 return;
         }
-        System.out.println("Welcome to the Brain Games!");
         switch (userChoice) {
             case "2":
                 playResult = Even.playGame(userName);
