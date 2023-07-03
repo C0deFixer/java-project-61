@@ -4,7 +4,7 @@ import hexlet.code.App;
 import hexlet.code.Engine;
 
 public class Prime {
-    static final int RANGE = 100;// range int from 0 to 100
+    static final int RANGE = 100; // range int from 0 to 100
     public static boolean isPrime(int number) {
         if (number < 2) {
             return false;

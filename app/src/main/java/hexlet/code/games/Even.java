@@ -4,7 +4,7 @@ import hexlet.code.App;
 import hexlet.code.Engine;
 
 public class Even {
-    static final int RANGE = 100;// range int from 0 to 1000
+    static final int RANGE = 100; // range int from 0 to 1000
     public static boolean playGame(String userName) {
         boolean result = true;
         int number;

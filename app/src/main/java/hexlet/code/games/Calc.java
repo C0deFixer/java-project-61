@@ -4,7 +4,7 @@ import hexlet.code.App;
 import hexlet.code.Engine;
 
 public class Calc {
-    final static int OPERATIONS_COUNT = 3;
+    static final int OPERATIONS_COUNT = 3;
     static final int RANGE = 100;
     public static boolean playGame(String userName) {
         boolean result = true;
@@ -20,8 +20,8 @@ public class Calc {
             //Suppose Accurate probability from 0 to quantityOfOperations
             operationRandomInt = (int) (Math.random() * OPERATIONS_COUNT);
             //System.out.println("operationRandomInt :" + operationRandomInt);
-            operand1 = (int) (Math.random() * 100);
-            operand2 = (int) (Math.random() * 100);
+            operand1 = (int) (Math.random() * RANGE);
+            operand2 = (int) (Math.random() * RANGE);
 
             switch (operationRandomInt) {
                 case 0:
