@@ -6,12 +6,13 @@ import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
 
+import java.util.Scanner;
+
 public class App {
-    public static final int QUESTIONS_COUNT = 3;
 
     public static void main(String[] args) {
         String userName = "";
-
+        Scanner scanner = new Scanner(System.in);
         boolean playResult;
 
         System.out.println("Please enter the game number and press Enter.");
@@ -26,25 +27,16 @@ public class App {
                         + "Your choice: ",
                 "",
                 "");
-        switch (userChoice) {
-            case "":
-            case "0":
-                return; //Exit
-            case "1":
-            case "2":
-            case "3":
-            case "4":
-            case "5":
-            case "6":
-                System.out.println("Welcome to the Brain Games!");
-                userName = Cli.getUserAnswer("May I have your name? ", "Hello, ", "!");
-                if (userChoice.equals("1")) {
-                    return;
-                }
-                break;
-            default:
-                return;
+        if (userChoice.equals("0")) {
+            return;
         }
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        if (scanner.hasNextLine()) {
+            userName = scanner.nextLine();
+            userName = !userName.isBlank() ? userName : "Anonim";
+        }
+        System.out.println("Hello, " + userName + "!");
         switch (userChoice) {
             case "2":
                 playResult = Even.playGame(userName);
@@ -62,9 +54,8 @@ public class App {
                 playResult = Prime.playGame(userName);
                 break;
             default:
-                //System.out.println("Exit");
-                //return; //Exit
-
+                return; //Exit
         }
+
     }
 }

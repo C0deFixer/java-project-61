@@ -11,15 +11,14 @@ public class Cli {
         Scanner scanner = new Scanner(System.in);
         if (scanner.hasNextLine()) {
             userChoice = scanner.nextLine();
-            userChoice = !userChoice.isBlank() ? userChoice : "Anonim";
             if (!printChoice.isBlank()) {
                 //System.out.printf("%s%s%s\n", printChoice, userChoice, postFix);
                 System.out.printf("%s%s%s\n", printChoice, userChoice, postFix);
             }
         } else {
+            userChoice = "0";
             System.out.println("Sorry, Type of Your choice is unacceptable!");
         }
-        //scanner.close();
         return userChoice;
     }
 }
