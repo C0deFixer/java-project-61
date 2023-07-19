@@ -24,8 +24,7 @@ public class Prime {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         for (int i = 0; i < Engine.QUESTIONS_COUNT; i++) {
             number = (int) (Math.random() * RANGE);
-            Engine.questions[i][Engine.INDEX_QUESTION] = Integer.toString(number);
-            Engine.questions[i][Engine.INDEX_ANSWER] = isPrime(number) ? "yes" : "no";
+            Engine.setQuestionAnswer(i, Integer.toString(number), isPrime(number) ? "yes" : "no");
         }
         result = Engine.playGameEngine(userName);
         return result;

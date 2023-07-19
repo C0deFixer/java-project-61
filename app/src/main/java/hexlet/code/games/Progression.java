@@ -14,6 +14,7 @@ public class Progression {
         int firstNumber;
         int indexHidingNumber;
         int stepProgression;
+        String hidingNumber;
 
         System.out.println("What number is missing in the progression?");
         for (int i = 0; i < Engine.QUESTIONS_COUNT; i++) {
@@ -21,17 +22,18 @@ public class Progression {
             stepProgression = (int) (Math.random() * RANGE_PROGRESSION);
             indexHidingNumber = (int) (Math.random() * NUMBERS_COUNT); //not first and not last
             StringJoiner question = new StringJoiner(" ");
+            hidingNumber = "";
 
             for (int j = 0; j < NUMBERS_COUNT; j++) {
 
                 if (j == indexHidingNumber) {
                     question.add("..");
-                    Engine.questions[i][Engine.INDEX_ANSWER] = Integer.toString(firstNumber + stepProgression * j);
+                    hidingNumber = Integer.toString(firstNumber + stepProgression * j);
                 } else {
                     question.add(Integer.toString(firstNumber + stepProgression * j));
                 }
             }
-            Engine.questions[i][Engine.INDEX_QUESTION] = question.toString();
+            Engine.setQuestionAnswer(i, question.toString(), hidingNumber);
         }
         result = Engine.playGameEngine(userName);
         return result;

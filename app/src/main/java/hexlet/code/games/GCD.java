@@ -22,9 +22,7 @@ public class GCD {
         for (int i = 0; i < Engine.QUESTIONS_COUNT; i++) {
             operand1 = (int) (Math.random() * RANGE);
             operand2 = (int) (Math.random() * RANGE);
-
-            Engine.questions[i][Engine.INDEX_QUESTION] = operand1 + " " + operand2;
-            Engine.questions[i][Engine.INDEX_ANSWER] = Integer.toString(getGCD(operand1, operand2));
+            Engine.setQuestionAnswer(i, operand1 + " " + operand2, Integer.toString(getGCD(operand1, operand2)));
         }
         result = Engine.playGameEngine(userName);
         return result;

@@ -34,16 +34,13 @@ public class Calc {
 
             switch (operationRandomInt) {
                 case 0:
-                    Engine.questions[i][Engine.INDEX_QUESTION] = operand1 + " + " + operand2;
-                    Engine.questions[i][Engine.INDEX_ANSWER] = sum(operand1, operand2);
+                    Engine.setQuestionAnswer(i, operand1 + " + " + operand2, sum(operand1, operand2));
                     break;
                 case 1:
-                    Engine.questions[i][Engine.INDEX_QUESTION] = operand1 + " - " + operand2;
-                    Engine.questions[i][Engine.INDEX_ANSWER] = substraction(operand1, operand2);
+                    Engine.setQuestionAnswer(i, operand1 + " - " + operand2, substraction(operand1, operand2));
                     break;
                 case 2:
-                    Engine.questions[i][Engine.INDEX_QUESTION] = operand1 + " * " + operand2;
-                    Engine.questions[i][Engine.INDEX_ANSWER] = multiply(operand1, operand2);
+                    Engine.setQuestionAnswer(i, operand1 + " * " + operand2, multiply(operand1, operand2));
                     break;
                 default:
                     RuntimeException caseException = new RuntimeException("Incorrect value of operation Calc");

@@ -8,7 +8,11 @@ public class Engine {
     public static final int QUESTIONS_PAIR = 2;
     public static final int INDEX_QUESTION = 0;
     public static final int INDEX_ANSWER = 1;
-    public static String[][] questions = new String[Engine.QUESTIONS_COUNT][QUESTIONS_PAIR];
+    private static String[][] questions = new String[Engine.QUESTIONS_COUNT][QUESTIONS_PAIR];
+    public static void setQuestionAnswer(int questionPosition, String question, String answer) {
+        questions[questionPosition][INDEX_QUESTION] = question;
+        questions[questionPosition][INDEX_ANSWER] = answer;
+    }
 
     public static boolean checkUserAnswer(Scanner scanner,
                                           String questionString,
@@ -38,8 +42,6 @@ public class Engine {
     public static boolean playGameEngine(String userName) {
         boolean result = true;
         Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Hello, " + userName + "!");
 
         for (int i = 0; i < questions.length && result; i++) {
             result = checkUserAnswer(scanner, "Question: " + questions[i][INDEX_QUESTION],

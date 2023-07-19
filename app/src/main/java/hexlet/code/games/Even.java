@@ -16,8 +16,7 @@ public class Even {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         for (int i = 0; i < Engine.QUESTIONS_COUNT; i++) {
             number = (int) (Math.random() * RANGE);
-            Engine.questions[i][Engine.INDEX_QUESTION] = Integer.toString(number);
-            Engine.questions[i][Engine.INDEX_ANSWER] = isEven(number) ? "yes" : "no";
+            Engine.setQuestionAnswer(i, Integer.toString(number), isEven(number) ? "yes" : "no");
         }
         result = Engine.playGameEngine(userName);
         return result;
