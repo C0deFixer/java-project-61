@@ -15,7 +15,6 @@ public class GCD {
     }
 
     public static void playGame(String userName) {
-        boolean result = true;
         int operand1;
         int operand2;
         String[][] questions = new String[Engine.QUESTIONS_COUNT][Engine.QUESTIONS_PAIR];

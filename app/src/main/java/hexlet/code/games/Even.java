@@ -11,7 +11,6 @@ public class Even {
 
     static final String RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     public static void playGame(String userName) {
-        boolean result = true;
         int number;
         String[][] questions = new String[Engine.QUESTIONS_COUNT][Engine.QUESTIONS_PAIR];
 

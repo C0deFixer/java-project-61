@@ -56,7 +56,6 @@ public class Calc {
         return result;
     }
     public static void playGame(String userName) {
-        boolean result = true;
         int operand1;
         int operand2;
         int operationRandomInt; // 1 - Sum, 2 - Subtraction, 3 - Multiply

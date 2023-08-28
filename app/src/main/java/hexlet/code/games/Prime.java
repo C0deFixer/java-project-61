@@ -19,7 +19,6 @@ public class Prime {
     }
 
     public static void playGame(String userName) {
-        boolean result = true;
         int number;
         String[][] questions = new String[Engine.QUESTIONS_COUNT][Engine.QUESTIONS_PAIR];
         for (int i = 0; i < Engine.QUESTIONS_COUNT; i++) {
