@@ -13,7 +13,6 @@ public class App {
     public static void main(String[] args) {
         String userName = "";
         Scanner scanner = new Scanner(System.in);
-        boolean playResult;
 
         System.out.println("Please enter the game number and press Enter.");
         // Menu Choice
@@ -39,19 +38,19 @@ public class App {
         System.out.println("Hello, " + userName + "!");
         switch (userChoice) {
             case "2":
-                playResult = Even.playGame(userName);
+                Even.playGame(userName);
                 break;
             case "3":
-                playResult = Calc.playGame(userName);
+                Calc.playGame(userName);
                 break;
             case "4":
-                playResult = GCD.playGame(userName);
+                GCD.playGame(userName);
                 break;
             case "5":
-                playResult = Progression.playGame(userName);
+                Progression.playGame(userName);
                 break;
             case "6":
-                playResult = Prime.playGame(userName);
+                Prime.playGame(userName);
                 break;
             default:
                 return; //Exit

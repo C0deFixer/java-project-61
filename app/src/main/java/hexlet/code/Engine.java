@@ -8,8 +8,8 @@ public class Engine {
     public static final int QUESTIONS_PAIR = 2;
     public static final int INDEX_QUESTION = 0;
     public static final int INDEX_ANSWER = 1;
-    private static String[][] questions = new String[Engine.QUESTIONS_COUNT][QUESTIONS_PAIR];
-    public static void setQuestionAnswer(int questionPosition, String question, String answer) {
+
+    public static void setQuestionAnswer(String[][] questions, int questionPosition, String question, String answer) {
         questions[questionPosition][INDEX_QUESTION] = question;
         questions[questionPosition][INDEX_ANSWER] = answer;
     }
@@ -39,9 +39,10 @@ public class Engine {
         return result;
     }
 
-    public static boolean playGameEngine(String userName) {
+    public static void playGameEngine(String userName, String rules, String[][] questions) {
         boolean result = true;
         Scanner scanner = new Scanner(System.in);
+        System.out.println(rules);
 
         for (int i = 0; i < questions.length && result; i++) {
             result = checkUserAnswer(scanner, "Question: " + questions[i][INDEX_QUESTION],
@@ -53,6 +54,5 @@ public class Engine {
             System.out.println("Let's try again, " + userName + "!");
         }
         scanner.close();
-        return result;
     }
 }
