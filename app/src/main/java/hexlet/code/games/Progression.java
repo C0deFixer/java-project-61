@@ -38,7 +38,7 @@ public class Progression {
         for (int i = 0; i < Engine.QUESTIONS_COUNT; i++) {
             int firstNumber = Utils.getRandomInt(1, FIST_NUMBER_RANGE);
             int stepProgression = Utils.getRandomInt(1, RANGE_PROGRESSION);
-            int indexHidingNumber = Utils.getRandomInt(1, NUMBERS_COUNT); //not first and not last
+            int indexHidingNumber = Utils.getRandomInt(1, NUMBERS_COUNT - 1); //not first and not last
             int[] progression = makeProgressionSubsequence(firstNumber, stepProgression);
             String questionString = makeQuestionString(progression, indexHidingNumber);
             Engine.setQuestionAnswer(questions, i, questionString, Integer.toString(progression[indexHidingNumber]));
