@@ -51,7 +51,7 @@ public class Calc {
 
         for (int i = 0; i < Engine.QUESTIONS_COUNT; i++) {
             //Suppose Accurate probability from 1 to quantityOfOperations
-            operationRandomInt = Utils.getRandomInt(0, OPERATIONS.length);
+            operationRandomInt = Utils.getRandomInt(0, OPERATIONS.length - 1);
             //System.out.println("operationRandomInt :" + operationRandomInt);
             operand1 = Utils.getRandomInt(1, RANGE);
             operand2 = Utils.getRandomInt(1, RANGE);
