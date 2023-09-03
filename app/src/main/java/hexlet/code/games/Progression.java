@@ -3,7 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import java.util.StringJoiner;
 
 public class Progression {
     private static final int RANGE_PROGRESSION = 10; //Step progression range
@@ -21,7 +20,7 @@ public class Progression {
 
     private static String makeQuestionString(String[] progression, int indexHidingNumber) {
         progression[indexHidingNumber] = "..";
-        return String. join(" ",progression);
+        return String.join(" ", progression);
         //StringJoiner question = new StringJoiner(" ");
 
         /*for (int j = 0; j < NUMBERS_COUNT; j++) {

@@ -20,7 +20,7 @@ public class GCD {
         for (int i = 0; i < Engine.QUESTIONS_COUNT; i++) {
 
             int operand1 = Utils.getRandomInt(1, RANGE);
-            int operand2 = Utils.getRandomInt(1, RANGE);;
+            int operand2 = Utils.getRandomInt(1, RANGE);
             questions[i][Engine.INDEX_QUESTION] = operand1 + " " + operand2;
             questions[i][Engine.INDEX_ANSWER] = Integer.toString(getGCD(operand1, operand2));
         }

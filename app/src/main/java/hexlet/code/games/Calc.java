@@ -51,12 +51,15 @@ public class Calc {
 
         for (int i = 0; i < Engine.QUESTIONS_COUNT; i++) {
             //Suppose Accurate probability from 1 to quantityOfOperations
-            int operationRandomInt = Utils.getRandomInt(0, OPERATIONS.length - 1); // 0 - Sum, 1 - Subtraction, 2 - Multiply
+            // 0 - Sum, 1 - Subtraction, 2 - Multiply
+            int operationRandomInt = Utils.getRandomInt(0, OPERATIONS.length - 1);
             //System.out.println("operationRandomInt :" + operationRandomInt);
             int operand1 = Utils.getRandomInt(1, RANGE);
             int operand2 = Utils.getRandomInt(1, RANGE);
-            questions[i][Engine.INDEX_QUESTION] = operand1 + " " + OPERATIONS[operationRandomInt] + " " + operand2;
-            questions[i][Engine.INDEX_ANSWER] = Integer.toString(calculateExpression(operand1, operand2, OPERATIONS[operationRandomInt]));
+            questions[i][Engine.INDEX_QUESTION] = operand1
+                    + " " + OPERATIONS[operationRandomInt] + " " + operand2;
+            questions[i][Engine.INDEX_ANSWER] = Integer.toString(calculateExpression(operand1,
+                    operand2, OPERATIONS[operationRandomInt]));
         }
         Engine.playGameEngine(userName, RULES, questions);
     }

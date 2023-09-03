@@ -52,7 +52,8 @@ public class Engine {
                 System.out.println("Correct!");
             } else {
                 result = false;
-                System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'%n", userAnswer, question[INDEX_ANSWER]);
+                System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'%n",
+                        userAnswer, question[INDEX_ANSWER]);
                 break;
             }
         }
