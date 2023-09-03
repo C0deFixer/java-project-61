@@ -6,23 +6,25 @@ import hexlet.code.Utils;
 import java.util.StringJoiner;
 
 public class Progression {
-    static final int RANGE_PROGRESSION = 10; //Step progression range
-    static final int FIST_NUMBER_RANGE = 10; //Step progression range
-    static final int NUMBERS_COUNT = 8; //Quantity of numbers in progression
+    private static final int RANGE_PROGRESSION = 10; //Step progression range
+    private static final int FIST_NUMBER_RANGE = 10; //First number Max value
+    private static final int NUMBERS_COUNT = 8; //Quantity of numbers in progression
 
-    static final String RULES = "What number is missing in the progression?";
-    private static int[] makeProgressionSubsequence(int firstNumber, int stepProgression) {
-        int[] result = new int[NUMBERS_COUNT];
-        for (int j = 0; j < NUMBERS_COUNT; j++) {
-            result[j] = firstNumber + stepProgression * j;
+    public static final String RULES = "What number is missing in the progression?";
+    private static String[] makeProgressionSubsequence(int firstNumber, int stepProgression, int numbersCount) {
+        String[] result = new String[numbersCount];
+        for (int j = 0; j < numbersCount; j++) {
+            result[j] = Integer.toString(firstNumber + stepProgression * j);
         }
         return result;
     }
 
-    private static String makeQuestionString(int[] progression, int indexHidingNumber) {
-        StringJoiner question = new StringJoiner(" ");
+    private static String makeQuestionString(String[] progression, int indexHidingNumber) {
+        progression[indexHidingNumber] = "..";
+        return String. join(" ",progression);
+        //StringJoiner question = new StringJoiner(" ");
 
-        for (int j = 0; j < NUMBERS_COUNT; j++) {
+        /*for (int j = 0; j < NUMBERS_COUNT; j++) {
 
             if (j == indexHidingNumber) {
                 question.add("..");
@@ -30,7 +32,7 @@ public class Progression {
                 question.add(Integer.toString(progression[j]));
             }
         }
-        return question.toString();
+        return question.toString();*/
     }
     public static void playGame(String userName) {
         String[][] questions = new String[Engine.QUESTIONS_COUNT][Engine.QUESTIONS_PAIR];
@@ -39,9 +41,9 @@ public class Progression {
             int firstNumber = Utils.getRandomInt(1, FIST_NUMBER_RANGE);
             int stepProgression = Utils.getRandomInt(1, RANGE_PROGRESSION);
             int indexHidingNumber = Utils.getRandomInt(1, NUMBERS_COUNT - 1); //not first and not last
-            int[] progression = makeProgressionSubsequence(firstNumber, stepProgression);
-            String questionString = makeQuestionString(progression, indexHidingNumber);
-            Engine.setQuestionAnswer(questions, i, questionString, Integer.toString(progression[indexHidingNumber]));
+            String[] progression = makeProgressionSubsequence(firstNumber, stepProgression, NUMBERS_COUNT);
+            questions[i][Engine.INDEX_ANSWER] = progression[indexHidingNumber];
+            questions[i][Engine.INDEX_QUESTION] = makeQuestionString(progression, indexHidingNumber);
         }
         Engine.playGameEngine(userName, RULES, questions);
     }
