@@ -6,42 +6,23 @@ import hexlet.code.Utils;
 public class Calc {
 
     private static final String[] OPERATIONS = {"+", "-", "*"};
-
     private static final int RANGE = 100;
-
     public static final String RULES = "What is the result of the expression?";
-
-    public static int sum(int operand1, int operand2) {
-        return operand1 + operand2;
-    }
-
-    public static int substraction(int operand1, int operand2) {
-        return operand1 - operand2;
-    }
-
-    public static int multiply(int operand1, int operand2) {
-        return operand1 * operand2;
-    }
-
-
-
 
     public static int calculateExpression(int operand1, int operand2, String operation) {
         int result;
         switch (operation) {
             case "+":
-                result = sum(operand1, operand2);
+                result = operand1 + operand2;
                 break;
             case "-":
-                result = substraction(operand1, operand2);
+                result = operand1 - operand2;
                 break;
             case "*":
-                result = multiply(operand1, operand2);
+                result = operand1 * operand2;
                 break;
             default:
                 result = 0;
-                RuntimeException caseException = new RuntimeException("Incorrect value of operation Calc:" + operation);
-                System.out.println(caseException.fillInStackTrace().toString());
         }
         return result;
     }

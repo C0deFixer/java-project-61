@@ -5,7 +5,6 @@ import hexlet.code.Utils;
 
 public class GCD {
     private static final int RANGE = 100;
-
     public static final String RULES = "Find the greatest common divisor of given numbers.";
     public static int getGCD(int a, int b) {
         if (a != 0 && b != 0) {

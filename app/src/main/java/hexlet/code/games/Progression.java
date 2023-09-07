@@ -8,7 +8,6 @@ public class Progression {
     private static final int RANGE_PROGRESSION = 10; //Step progression range
     private static final int FIST_NUMBER_RANGE = 10; //First number Max value
     private static final int NUMBERS_COUNT = 8; //Quantity of numbers in progression
-
     public static final String RULES = "What number is missing in the progression?";
     private static String[] makeProgressionSubsequence(int firstNumber, int stepProgression, int numbersCount) {
         String[] result = new String[numbersCount];
@@ -21,17 +20,6 @@ public class Progression {
     private static String makeQuestionString(String[] progression, int indexHidingNumber) {
         progression[indexHidingNumber] = "..";
         return String.join(" ", progression);
-        //StringJoiner question = new StringJoiner(" ");
-
-        /*for (int j = 0; j < NUMBERS_COUNT; j++) {
-
-            if (j == indexHidingNumber) {
-                question.add("..");
-            } else {
-                question.add(Integer.toString(progression[j]));
-            }
-        }
-        return question.toString();*/
     }
     public static void playGame(String userName) {
         String[][] questions = new String[Engine.QUESTIONS_COUNT][Engine.QUESTIONS_PAIR];

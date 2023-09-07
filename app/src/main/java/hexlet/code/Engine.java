@@ -9,31 +9,6 @@ public class Engine {
     public static final int INDEX_QUESTION = 0;
     public static final int INDEX_ANSWER = 1;
 
-    /*public static boolean checkUserAnswer(Scanner scanner,
-                                          String questionString,
-                                          String printChoice,
-                                          String rightAnswer) {
-        //return true if user give right Answer, otherwise false
-        boolean result;
-        String userAnswer = "";
-
-        System.out.println(questionString);
-        System.out.print(printChoice);
-        if (scanner.hasNextLine()) {
-            userAnswer = scanner.nextLine();
-        } else {
-            System.out.println("Sorry, Type of Your choice is unacceptable!");
-        }
-        if (userAnswer.equalsIgnoreCase(rightAnswer)) {
-            result = true;
-            System.out.println("Correct!");
-        } else {
-            result = false;
-            System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'%n", userAnswer, rightAnswer);
-        }
-        return result;
-    }*/
-
     public static void playGameEngine(String userName, String rules, String[][] questions) {
         boolean result = true;
         Scanner scanner = new Scanner(System.in);
